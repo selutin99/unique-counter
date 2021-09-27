@@ -36,6 +36,12 @@ You can check the contracts of service via Swagger. Type in browser
 ```
 http://localhost:8080/swagger-ui.html
 ```
+At screen below you can see app endpoints: 
+
+![alt text](media/swagger_screen.png "Swagger API")
 
 ## Testing
-...
+You can run app tests by command
+```
+mvn test
+```
