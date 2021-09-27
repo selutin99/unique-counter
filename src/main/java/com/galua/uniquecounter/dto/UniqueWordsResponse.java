@@ -8,7 +8,7 @@ import java.util.Map;
 @Data
 public class UniqueWordsResponse {
 
-    private Map<String, Integer> words;
+    private Map<String, Long> words;
     private LocalDateTime requestDate;
     private LocalDateTime responseDate;
 }

@@ -18,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
@@ -31,8 +32,8 @@ public class UniqueWordsController {
 
     private final UniqueWordProcessService processService;
 
-    @ApiOperation(value = "Get unique words list from HTML document",
-            produces = "application/json",
+    @ApiOperation(value = "Get unique words list from document",
+            produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "The process call is Successful"),
@@ -42,11 +43,11 @@ public class UniqueWordsController {
     public UniqueWordsResponse getUniqueWordsInDocument(
             @ApiParam(name = "file", value = "Select the file to get unique words", required = true)
             @RequestPart("file") @Valid @NotNull @NotBlank MultipartFile file)
-            throws ExecutionException, InterruptedException {
+            throws ExecutionException, InterruptedException, IOException {
         UniqueWordsResponse response = new UniqueWordsResponse();
         response.setRequestDate(LocalDateTime.now());
 
-        CompletableFuture<Map<String, Integer>> asyncFuture = processService.getAllUniqueWordsInDocument(file);
+        CompletableFuture<Map<String, Long>> asyncFuture = processService.getAllUniqueWordsInDocument(file);
         CompletableFuture.allOf(asyncFuture).join();
 
         response.setWords(asyncFuture.get());
