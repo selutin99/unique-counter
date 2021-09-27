@@ -7,7 +7,7 @@ import java.io.InputStream;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
-public class Utils {
+public class Util {
 
     public static String readURLToString(String url) throws IOException {
         try (InputStream inputStream = new URL(url).openStream()) {

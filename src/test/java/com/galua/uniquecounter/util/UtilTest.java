@@ -9,12 +9,12 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class UtilsTest {
+public class UtilTest {
 
     @Test
     void testReadURLToString() throws IOException {
         // given - when
-        String data = Utils.readURLToString("https://www.google.com");
+        String data = Util.readURLToString("https://www.google.com");
 
         // then
         assertNotNull(data);
@@ -23,13 +23,13 @@ public class UtilsTest {
     @Test
     void testReadURLToStringEmptyURL() {
         // given - when - then
-        assertThrows(IOException.class, () -> Utils.readURLToString(""));
+        assertThrows(IOException.class, () -> Util.readURLToString(""));
     }
 
     @Test
     void testIsNumericTrueCondition() {
         // given - when
-        boolean trueCondition = Utils.isNumeric("23.3");
+        boolean trueCondition = Util.isNumeric("23.3");
 
         // then
         assertTrue(trueCondition);
@@ -38,7 +38,7 @@ public class UtilsTest {
     @Test
     void testIsNumericFalseCondition() {
         // given - when
-        boolean falseCondition = Utils.isNumeric("qwef.3");
+        boolean falseCondition = Util.isNumeric("qwef.3");
 
         // then
         assertFalse(falseCondition);

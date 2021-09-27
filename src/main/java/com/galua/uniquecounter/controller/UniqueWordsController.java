@@ -1,7 +1,6 @@
 package com.galua.uniquecounter.controller;
 
-import com.galua.uniquecounter.dto.UniqueWordsResponse;
-import io.swagger.annotations.Api;
+import com.galua.uniquecounter.model.dto.UniqueWordsResponse;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import io.swagger.annotations.ApiResponse;
@@ -24,7 +23,7 @@ public interface UniqueWordsController {
             @ApiResponse(code = 500, message = "The process call is Failed"),
             @ApiResponse(code = 400, message = "Incorrect input data")
     })
-    ResponseEntity<UniqueWordsResponse> getUniqueWordsInDocumentByMultipart(
+    ResponseEntity<UniqueWordsResponse> getUniqueWordsInDocumentByFile(
             @ApiParam(name = "file", value = "Select the file to get unique words", required = true) MultipartFile file
     ) throws ExecutionException, InterruptedException, IOException;
 

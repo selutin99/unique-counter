@@ -8,8 +8,8 @@
 - [Testing](#Testing)
 
 ## Overview
-[Service role description] of lumbar-spine system. 
-[What the service is used for description].
+An application that allows to display
+statistics on the number of unique words in the console for an HTML page.
 
 ## Documentation
 * Task text: [link](media/task_description.pdf)

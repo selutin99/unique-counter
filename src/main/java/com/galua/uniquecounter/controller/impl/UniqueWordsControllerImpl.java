@@ -1,11 +1,10 @@
 package com.galua.uniquecounter.controller.impl;
 
 import com.galua.uniquecounter.controller.UniqueWordsController;
-import com.galua.uniquecounter.dto.UniqueWordsResponse;
+import com.galua.uniquecounter.model.dto.UniqueWordsResponse;
 import com.galua.uniquecounter.service.UniqueWordProcessService;
 import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;
-import org.apache.commons.io.IOUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -21,16 +20,14 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
-import static com.galua.uniquecounter.util.Utils.readURLToString;
+import static com.galua.uniquecounter.util.Util.readURLToString;
 
 @RestController
 @RequestMapping("/words")
@@ -42,7 +39,7 @@ public class UniqueWordsControllerImpl implements UniqueWordsController {
 
     @Override
     @PostMapping("/process/file")
-    public ResponseEntity<UniqueWordsResponse> getUniqueWordsInDocumentByMultipart(
+    public ResponseEntity<UniqueWordsResponse> getUniqueWordsInDocumentByFile(
             @RequestPart("file") @Valid @NotNull @NotBlank MultipartFile file)
             throws IOException, ExecutionException, InterruptedException {
         UniqueWordsResponse response = buildUniqueWordsResponse(file);

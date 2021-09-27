@@ -1,4 +1,4 @@
-package com.galua.uniquecounter.dto;
+package com.galua.uniquecounter.model.dto;
 
 import lombok.Data;
 

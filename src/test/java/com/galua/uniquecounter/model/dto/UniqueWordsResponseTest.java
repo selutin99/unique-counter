@@ -1,4 +1,4 @@
-package com.galua.uniquecounter.dto;
+package com.galua.uniquecounter.model.dto;
 
 import org.junit.jupiter.api.Test;
 
@@ -19,5 +19,6 @@ public class UniqueWordsResponseTest {
         assertNotNull(response);
         assertNotNull(response.getRequestDate());
         assertNull(response.getResponseDate());
+        assertNull(response.getWords());
     }
 }
