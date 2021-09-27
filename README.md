@@ -8,7 +8,6 @@
 - [Testing](#Testing)
 - [Other useful info](#Other-useful-info)
 	- [Logs](#Logs)
-	- [Repository link](#Repository-link)
 
 ## Overview
 An application that allows to display
@@ -59,6 +58,3 @@ Application store 3 types of logs in files:
 1. `logs/app-debug.log` - logs with DEBUG level
 2. `logs/app-info.log` - logs with INFO level. Store information about application execution
 3. `logs/app-error.log` - logs with ERROR level. Store application errors and unexpected exceptions
-
-### Repository link
-You can check my github repository by [link](https://github.com/selutin99/unique-counter)
