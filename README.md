@@ -25,8 +25,8 @@ statistics on the number of unique words in the console for an HTML page.
 
 ## Local development and installation
 * Check you have Java 8 installed
-* Open project from your IDE
-* For build project type commands
+* Open project from your IDE and start development
+* Or you can build project type commands
 ```
 mvn clean package
 ```
