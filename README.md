@@ -1,11 +1,13 @@
-# internal.template
+# unique-counter
 
 ## Table of contents
 - [Overview](#Overview)
 - [Documentation](#Documentation)
 - [Git info](#Git-info)
-- [Local Development](#Local-Development)
+- [Local development and installation](#Local-development-and-installation)
 - [Testing](#Testing)
+- [Other useful info](#Other-useful-info)
+	- [Logs](#Logs)
 
 ## Overview
 An application that allows to display
@@ -20,7 +22,7 @@ statistics on the number of unique words in the console for an HTML page.
 * After the work is completed, a pull request is created to the master branch;
 * Make sure that all CI & CD validations are passed successful.
 
-## Local Development
+## Local development and installation
 * Check you have Java 8 installed
 * Open project from your IDE
 * For build project type commands
@@ -30,7 +32,7 @@ mvn clean package
 * Run Spring Boot service
 ```
 cd target
-java -jar uniquecounter-1.0-SNAPSHOT.jar
+java -jar unique-counter-0.0.1-SNAPSHOT.jar
 ```
 You can check the contracts of service via Swagger. Type in browser
 ```
@@ -45,3 +47,14 @@ You can run app tests by command
 ```
 mvn test
 ```
+
+## Other useful info
+
+### Logs
+Logging configured via log4j2 library.
+Config placed by path: `src/main/resources/log4j2.xml`
+
+Application store 3 types of logs in files:
+1. `logs/app-debug.log` - logs with DEBUG level
+2. `logs/app-info.log` - logs with INFO level. Store information about application execution
+3. `logs/app-error.log` - logs with ERROR level. Store application errors and unexpected exceptions
